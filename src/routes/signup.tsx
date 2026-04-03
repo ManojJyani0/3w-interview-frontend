@@ -5,6 +5,13 @@ import { useAuthContext } from '@/lib/auth-context'
 import { AuthError } from '#/feature/auth/components/AuthError'
 
 export const Route = createFileRoute('/signup')({
+  head: () => ({
+    title: '3W Full Stack | Signup',
+    meta: [
+      { name: 'description', content: 'Create an account to access the 3W social feed and post updates.' },
+      { name: 'keywords', content: 'signup, register, authentication, social feed' },
+    ],
+  }),
   // 1. Before load redirect (best for performance)
   beforeLoad: async ({ context, location }) => {
     // Check auth status from query cache (synchronous)

@@ -98,7 +98,36 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        name: 'description',
+        content: 'Share, discover, and engage with community posts in a lightweight social feed app.',
+      },
+      {
+        name: 'keywords',
+        content: 'social, posts, community, blog, like, comment, infinite scroll',
+      },
+      {
+        name: 'theme-color',
+        content: '#4fb8b2',
+      },
+      {
+        name: 'robots',
+        content: 'index, follow',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:title',
+        content: '3W Full Stack Social Feed',
+      },
+      {
+        property: 'og:description',
+        content: 'A modern social feed with likes, comments, and infinite scrolling.',
+      },
+      {
+        property: 'og:image',
+        content: '/logo192.png',
       },
     ],
     links: [
@@ -106,7 +135,21 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/logo192.png',
+      },
+      {
+        rel: 'manifest',
+        href: '/manifest.json',
+      },
     ],
+    title: '3W Feed | Full Stack Social',
   }),
   shellComponent: RootDocument,
 })

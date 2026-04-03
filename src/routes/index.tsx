@@ -13,7 +13,13 @@ import PostList from '../feature/post/components/PostList'
 import { useAuthContext } from '@/lib/auth-context'
 
 export const Route = createFileRoute('/')({
-  // Redirect unauthenticated users to signup
+  head: () => ({
+    title: '3W Full Stack Feed | Home',
+    meta: [
+      { name: 'description', content: 'Home feed of posts, with infinite scroll, likes, and comments.' },
+      { name: 'keywords', content: 'home, feed, posts, social, 3w' },
+    ],
+  }),
   beforeLoad: async ({ context, location }) => {
     // Check auth status from query cache (synchronous)
     const userQuery = context.queryClient.getQueryData(['auth-user'])
