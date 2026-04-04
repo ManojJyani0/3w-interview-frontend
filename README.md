@@ -1,5 +1,9 @@
 # 3W Full Stack Social Feed
 
+🚀 **Live Demo**: [3w-interview-frontend.vercel.app](https://3w-interview-frontend.vercel.app)
+
+> **Note**: Originally deployed on Netlify, but reached monthly quota. Redeployed on Vercel with the above URL.
+
 A modern, responsive social media feed application built with React, TypeScript, and TanStack Router. Features infinite scrolling, real-time like/comment interactions, and seamless user authentication.
 
 ## 🚀 Features
