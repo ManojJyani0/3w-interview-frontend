@@ -10,7 +10,7 @@ import type { LoginCredentials, SignupData } from './types'
 
 const QUERY_KEYS = {
   auth: {
-    me: ['auth', 'me'] as const,
+    me: ['auth-user'] as const,
     session: ['auth', 'session'] as const,
   },
 }
@@ -39,7 +39,10 @@ export const useLogin = () => {
       // Cookie is automatically set by the server and included in subsequent requests
       // No need to store token manually
       
-      // Invalidate and refetch current user
+      // Update the cache immediately with the logged-in user
+      queryClient.setQueryData(QUERY_KEYS.auth.me, data.user)
+      
+      // Invalidate and refetch current user to ensure freshness
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.auth.me })
     },
   })
@@ -57,7 +60,10 @@ export const useSignup = () => {
       // Cookie is automatically set by the server and included in subsequent requests
       // No need to store token manually
       
-      // Invalidate and refetch current user
+      // Update the cache immediately with the signed-up user
+      queryClient.setQueryData(QUERY_KEYS.auth.me, data.user)
+      
+      // Invalidate and refetch current user to ensure freshness
       queryClient.invalidateQueries({ queryKey: QUERY_KEYS.auth.me })
     },
   })
