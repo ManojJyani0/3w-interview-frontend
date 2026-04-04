@@ -1,53 +1,167 @@
-Welcome to your new TanStack Start app! 
+# 3W Full Stack Social Feed
 
-# Getting Started
+A modern, responsive social media feed application built with React, TypeScript, and TanStack Router. Features infinite scrolling, real-time like/comment interactions, and seamless user authentication.
 
-To run this application:
+## 🚀 Features
 
+- **Infinite Scroll Feed**: Load posts dynamically as you scroll
+- **Real-time Interactions**: Like/unlike posts and add comments with immediate UI updates
+- **User Authentication**: Secure signup/login with Better Auth
+- **Responsive Design**: Mobile-first design with Material-UI
+- **SEO Optimized**: Meta tags, Open Graph, and proper head management
+- **Type-Safe**: Full TypeScript implementation
+- **Modern Stack**: React 19, TanStack Query, TanStack Router
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 19, TypeScript, TanStack Router, TanStack Query
+- **UI**: Material-UI (MUI), Emotion
+- **Build**: Vite
+- **Auth**: Better Auth
+- **Deployment**: Netlify/Vercel ready
+
+## 📦 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ManojJyani0/3w-interview-frontend.git
+   cd 3w-interview-frontend
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   pnpm install
+   ```
+
+3. **Environment Setup**
+   Create a `.env` file with:
+   ```env
+   VITE_API_BASE_URL=https://your-backend-api-url
+   ```
+
+4. **Start development server**
+   ```bash
+   npm run dev
+   # or
+   pnpm dev
+   ```
+
+## 🏗️ Build & Deploy
+
+### Development
 ```bash
-pnpm install
-pnpm dev
+npm run dev
 ```
 
-# Building For Production
-
-To build this application for production:
-
+### Production Build
 ```bash
-pnpm build
+npm run build
 ```
 
-## Testing
-
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
+### Preview Production Build
 ```bash
-pnpm test
+npm run preview
 ```
 
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Uninstall the packages: `pnpm add @tailwindcss/vite tailwindcss --dev`
-
-## Linting & Formatting
-
-
-This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
-
+### Testing
 ```bash
-pnpm lint
-pnpm format
-pnpm check
+npm run test
 ```
+
+### Linting & Formatting
+```bash
+npm run lint
+npm run format
+npm run check
+```
+
+## 🚀 Deployment
+
+### Netlify
+- Connect your GitHub repo
+- Build command: `npm run build`
+- Publish directory: `dist`
+- SPA redirect configured in `netlify.toml`
+
+### Vercel
+- Connect your GitHub repo
+- Build command: `npm run build`
+- Output directory: `dist`
+- SPA routing configured in `vercel.json`
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+├── feature/            # Feature-based modules
+│   ├── auth/          # Authentication
+│   └── post/          # Post management
+├── integrations/       # Third-party integrations
+├── lib/               # Utilities and providers
+├── routes/            # TanStack Router routes
+└── styles.css         # Global styles
+```
+
+## 🔧 Configuration
+
+- **Vite**: `vite.config.ts`
+- **TypeScript**: `tsconfig.json`
+- **ESLint**: `eslint.config.js`
+- **Prettier**: `prettier.config.js`
+- **Netlify**: `netlify.toml`
+- **Vercel**: `vercel.json`
+
+## 🌐 API Integration
+
+This frontend connects to a backend API for:
+- User authentication
+- Post CRUD operations
+- Like/unlike functionality
+- Comment management
+
+Backend repository: [3W Backend](https://github.com/ManojJyani0/3w-interview-backend)
+
+## 📱 Features in Detail
+
+### Infinite Scroll
+- Uses `IntersectionObserver` for performance
+- Loads posts in pages of 10
+- Shows loading indicator at bottom
+
+### Real-time Updates
+- Optimistic UI updates for likes/comments
+- React Query cache invalidation
+- Immediate feedback without page refresh
+
+### Authentication Flow
+- Protected routes with redirects
+- Persistent sessions
+- Secure logout
+
+### SEO & Performance
+- Dynamic meta tags per route
+- Open Graph tags for social sharing
+- Optimized bundle splitting
+- Progressive Web App ready
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## 📄 License
+
+This project is part of a technical interview assignment.
+
+---
+
+Built with ❤️ using TanStack Start
 
 
 ## Setting up Better Auth
