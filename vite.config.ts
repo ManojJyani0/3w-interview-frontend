@@ -13,6 +13,7 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+  base:process.env.VITE_BASE_PATH || '/3w-interview-frontend'
 })
 
 export default config
